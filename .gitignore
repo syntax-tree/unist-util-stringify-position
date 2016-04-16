@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+coverage/
+node_modules/
+unist-util-stringify-position.js
+unist-util-stringify-position.min.js
