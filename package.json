@@ -1,6 +1,6 @@
 {
   "name": "unist-util-stringify-position",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Stringify a Unist node, location, or position",
   "license": "MIT",
   "keywords": [
