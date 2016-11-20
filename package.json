@@ -13,10 +13,7 @@
     "util",
     "utility"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wooorm/unist-util-stringify-position.git"
-  },
+  "repository": "https://github.com/wooorm/unist-util-stringify-position",
   "bugs": "https://github.com/wooorm/unist-util-stringify-position/issues",
   "author": "Titus Wormer <tituswormer@gmail.com> (http://wooorm.com)",
   "contributors": [
@@ -25,20 +22,20 @@
   "files": [
     "index.js"
   ],
+  "dependencies": {
+    "has": "^1.0.1"
+  },
   "devDependencies": {
     "browserify": "^13.0.0",
     "esmangle": "^1.0.0",
     "istanbul": "^0.4.0",
-    "remark": "^4.0.0",
-    "remark-comment-config": "^3.0.0",
-    "remark-github": "^4.0.0",
-    "remark-lint": "^3.0.0",
-    "remark-usage": "^3.0.0",
+    "remark-cli": "^2.0.0",
+    "remark-preset-wooorm": "^1.0.0",
     "tape": "^4.5.1",
     "xo": "^0.17.1"
   },
   "scripts": {
-    "build-md": "remark . --quiet --frail",
+    "build-md": "remark . --quiet --frail --output",
     "build-bundle": "browserify index.js --no-builtins -s unistUtilStringifyPosition > unist-util-stringify-position.js",
     "build-mangle": "esmangle unist-util-stringify-position.js > unist-util-stringify-position.min.js",
     "build": "npm run build-md && npm run build-bundle && npm run build-mangle",
@@ -53,7 +50,7 @@
       "unist-util-stringify-position.js"
     ]
   },
-  "dependencies": {
-    "has": "^1.0.1"
+  "remarkConfig": {
+    "presets": "wooorm"
   }
 }
