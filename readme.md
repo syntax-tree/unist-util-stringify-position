@@ -62,13 +62,13 @@ end.  `null` is returned if the given value is neither `node`,
 
 <!-- Definition -->
 
-[build-badge]: https://img.shields.io/travis/wooorm/unist-util-stringify-position.svg
+[build-badge]: https://img.shields.io/travis/syntax-tree/unist-util-stringify-position.svg
 
-[build-page]: https://travis-ci.org/wooorm/unist-util-stringify-position
+[build-page]: https://travis-ci.org/syntax-tree/unist-util-stringify-position
 
-[coverage-badge]: https://img.shields.io/codecov/c/github/wooorm/unist-util-stringify-position.svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-util-stringify-position.svg
 
-[coverage-page]: https://codecov.io/github/wooorm/unist-util-stringify-position?branch=master
+[coverage-page]: https://codecov.io/github/syntax-tree/unist-util-stringify-position?branch=master
 
 [npm]: https://docs.npmjs.com/cli/install
 
@@ -76,10 +76,10 @@ end.  `null` is returned if the given value is neither `node`,
 
 [author]: http://wooorm.com
 
-[unist]: https://github.com/wooorm/unist
+[unist]: https://github.com/syntax-tree/unist
 
-[node]: https://github.com/wooorm/unist#node
+[node]: https://github.com/syntax-tree/unist#node
 
-[location]: https://github.com/wooorm/unist#location
+[location]: https://github.com/syntax-tree/unist#location
 
-[position]: https://github.com/wooorm/unist#position
+[position]: https://github.com/syntax-tree/unist#position
