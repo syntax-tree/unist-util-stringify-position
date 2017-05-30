@@ -1,6 +1,6 @@
 'use strict';
 
-var has = require('has');
+var own = {}.hasOwnProperty;
 
 module.exports = stringify;
 
@@ -11,17 +11,17 @@ function stringify(value) {
   }
 
   /* Node. */
-  if (has(value, 'position') || has(value, 'type')) {
+  if (own.call(value, 'position') || own.call(value, 'type')) {
     return location(value.position);
   }
 
   /* Location. */
-  if (has(value, 'start') || has(value, 'end')) {
+  if (own.call(value, 'start') || own.call(value, 'end')) {
     return location(value);
   }
 
   /* Position. */
-  if (has(value, 'line') || has(value, 'column')) {
+  if (own.call(value, 'line') || own.call(value, 'column')) {
     return position(value);
   }
 

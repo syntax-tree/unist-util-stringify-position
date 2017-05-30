@@ -22,9 +22,7 @@
   "files": [
     "index.js"
   ],
-  "dependencies": {
-    "has": "^1.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browserify": "^14.1.0",
     "esmangle": "^1.0.0",
