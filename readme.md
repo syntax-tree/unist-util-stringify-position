@@ -42,11 +42,11 @@ a node’s location.
 ###### Parameters
 
 *   `node` ([`Node`][node])
-    — Node whose `'position'` property to stringify;
+    — Node whose `'position'` property to stringify
 *   `location` ([`Location`][location])
-    — Location whose `'start'` and `'end'` positions to stringify;
+    — Location whose `'start'` and `'end'` positions to stringify
 *   `position` ([`Position`][position])
-    — Location whose `'line'` and `'column'` to stringify.
+    — Location whose `'line'` and `'column'` to stringify
 
 ###### Returns
 
