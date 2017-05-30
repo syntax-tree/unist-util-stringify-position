@@ -29,10 +29,10 @@
     "browserify": "^14.1.0",
     "esmangle": "^1.0.0",
     "nyc": "^10.0.0",
-    "remark-cli": "^2.0.0",
-    "remark-preset-wooorm": "^1.0.0",
+    "remark-cli": "^3.0.0",
+    "remark-preset-wooorm": "^3.0.0",
     "tape": "^4.5.1",
-    "xo": "^0.17.1"
+    "xo": "^0.18.1"
   },
   "scripts": {
     "build-md": "remark . --quiet --frail --output",
@@ -52,11 +52,14 @@
   },
   "xo": {
     "space": true,
+    "esnext": false,
     "ignores": [
       "unist-util-stringify-position.js"
     ]
   },
   "remarkConfig": {
-    "presets": "wooorm"
+    "plugins": [
+      "preset-wooorm"
+    ]
   }
 }
