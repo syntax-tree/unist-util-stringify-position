@@ -19,7 +19,7 @@ test('stringifyPosition', function (t) {
   t.equal(
     stringify({type: 'text', position: 3}),
     '1:1-1:1',
-    'should return range for `node` with invalid `position` #1'
+    'should return a range for `node` with invalid `position` #1'
   );
 
   t.equal(
@@ -28,7 +28,7 @@ test('stringifyPosition', function (t) {
       position: {start: {}, end: {}}
     }),
     '1:1-1:1',
-    'should return range for `node` with invalid `position` #2'
+    'should return a range for `node` with invalid `position` #2'
   );
 
   t.equal(
@@ -40,7 +40,7 @@ test('stringifyPosition', function (t) {
       }
     }),
     '1:1-1:1',
-    'should return range for `node` with invalid `position` #3'
+    'should return a range for `node` with invalid `position` #3'
   );
 
   t.equal(
@@ -52,25 +52,25 @@ test('stringifyPosition', function (t) {
       }
     }),
     '2:5-2:6',
-    'should return range for `node` with valid `position`'
+    'should return a range for `node` with valid `position`'
   );
 
   t.equal(
     stringify({start: null, end: null}),
     '1:1-1:1',
-    'should return a range for a `location` without `position`s'
+    'should return a range for a `position` without `point`s'
   );
 
   t.equal(
     stringify({start: 3, end: 6}),
     '1:1-1:1',
-    'should return range for `location` with invalid `position`s #1'
+    'should return a range for `position` with invalid `point`s #1'
   );
 
   t.equal(
     stringify({start: {}, end: {}}),
     '1:1-1:1',
-    'should return range for `location` with invalid `position`s #1'
+    'should return range for `position` with invalid `point`s #1'
   );
 
   t.equal(
@@ -79,7 +79,7 @@ test('stringifyPosition', function (t) {
       end: {line: null, column: null}
     }),
     '1:1-1:1',
-    'should return range for `location` with invalid `position`s #3'
+    'should return range for `position` with invalid `point`s #3'
   );
 
   t.equal(
@@ -88,37 +88,37 @@ test('stringifyPosition', function (t) {
       end: {line: 2, column: 6}
     }),
     '2:5-2:6',
-    'should return range for `location` with valid `position`s'
+    'should return range for `position` with valid `point`s'
   );
 
   t.equal(
     stringify({line: null, column: null}),
     '1:1',
-    'should return a point for a `position` without indices'
+    'should return a point for a `point` without indices'
   );
 
   t.equal(
     stringify({line: 'foo', column: 'bar'}),
     '1:1',
-    'should return a point for a `position` with invalid indices #1'
+    'should return a point for a `point` with invalid indices #1'
   );
 
   t.equal(
     stringify({line: 4}),
     '4:1',
-    'should return a point for a partially valid `position` #1'
+    'should return a point for a partially valid `point` #1'
   );
 
   t.equal(
     stringify({column: 12}),
     '1:12',
-    'should return a point for a partially valid `position` #1'
+    'should return a point for a partially valid `point` #1'
   );
 
   t.equal(
     stringify({line: 5, column: 2}),
     '5:2',
-    'should return a point for a valid `position`'
+    'should return a point for a valid `point`'
   );
 
   t.end();

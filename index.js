@@ -12,21 +12,29 @@ function stringify(value) {
 
   /* Node. */
   if (own.call(value, 'position') || own.call(value, 'type')) {
-    return location(value.position);
-  }
-
-  /* Location. */
-  if (own.call(value, 'start') || own.call(value, 'end')) {
-    return location(value);
+    return position(value.position);
   }
 
   /* Position. */
-  if (own.call(value, 'line') || own.call(value, 'column')) {
+  if (own.call(value, 'start') || own.call(value, 'end')) {
     return position(value);
+  }
+
+  /* Point. */
+  if (own.call(value, 'line') || own.call(value, 'column')) {
+    return point(value);
   }
 
   /* ? */
   return null;
+}
+
+function point(point) {
+  if (!point || typeof point !== 'object') {
+    point = {};
+  }
+
+  return index(point.line) + ':' + index(point.column);
 }
 
 function position(pos) {
@@ -34,15 +42,7 @@ function position(pos) {
     pos = {};
   }
 
-  return index(pos.line) + ':' + index(pos.column);
-}
-
-function location(loc) {
-  if (!loc || typeof loc !== 'object') {
-    loc = {};
-  }
-
-  return position(loc.start) + '-' + position(loc.end);
+  return point(pos.start) + '-' + point(pos.end);
 }
 
 function index(value) {

@@ -1,12 +1,13 @@
 {
   "name": "unist-util-stringify-position",
   "version": "1.1.1",
-  "description": "Stringify a Unist node, location, or position",
+  "description": "Stringify a Unist node, position, or point",
   "license": "MIT",
   "keywords": [
     "unist",
     "position",
     "location",
+    "point",
     "node",
     "stringify",
     "tostring",

@@ -1,6 +1,6 @@
 # unist-util-stringify-position [![Build Status][build-badge]][build-page] [![Coverage Status][coverage-badge]][coverage-page]
 
-Stringify a [**Unist**][unist] [position][] or [location][].
+Stringify a [**Unist**][unist] [`Position`][position] or [`Point`][point].
 
 ## Installation
 
@@ -15,13 +15,16 @@ npm install unist-util-stringify-position
 ```javascript
 var stringify = require('unist-util-stringify-position');
 
-stringify({line: 2, column: 3 }); //=> '2:3'
+// Point
+stringify({line: 2, column: 3}); //=> '2:3'
 
+// Position
 stringify({
   start: {line: 2},
   end: {line: 3}
 }); //=> '2:1-3:1'
 
+// Node
 stringify({
   type: 'text',
   value: '!',
@@ -34,27 +37,27 @@ stringify({
 
 ## API
 
-### `stringifyPosition(node|location|position)`
+### `stringifyPosition(node|position|point)`
 
-Stringify one position, a location (start and end positions), or
-a node’s location.
+Stringify one point, a position (start and end points), or
+a node’s position.
 
 ###### Parameters
 
 *   `node` ([`Node`][node])
     — Node whose `'position'` property to stringify
-*   `location` ([`Location`][location])
-    — Location whose `'start'` and `'end'` positions to stringify
 *   `position` ([`Position`][position])
-    — Location whose `'line'` and `'column'` to stringify
+    — Position whose `'start'` and `'end'` points to stringify
+*   `point` ([`Point`][point])
+    — Point whose `'line'` and `'column'` to stringify
 
 ###### Returns
 
 `string?` — A range `ls:cs-le:ce` (when given `node` or
-`location`) or a point `l:c` (when given `position`), where `l` stands
+`position`) or a point `l:c` (when given `point`), where `l` stands
 for line, `c` for column, `s` for `start`, and `e` for
 end.  `null` is returned if the given value is neither `node`,
-`location`, nor `position`.
+`position`, nor `point`.
 
 ## License
 
@@ -80,6 +83,6 @@ end.  `null` is returned if the given value is neither `node`,
 
 [node]: https://github.com/syntax-tree/unist#node
 
-[location]: https://github.com/syntax-tree/unist#location
-
 [position]: https://github.com/syntax-tree/unist#position
+
+[point]: https://github.com/syntax-tree/unist#point
