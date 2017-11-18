@@ -59,6 +59,14 @@ for line, `c` for column, `s` for `start`, and `e` for
 end.  `null` is returned if the given value is neither `node`,
 `position`, nor `point`.
 
+## Contribute
+
+See [`contribute.md` in `syntax-tree/unist`][contribute] for ways to get
+started.
+
+This organisation has a [Code of Conduct][coc].  By interacting with this
+repository, organisation, or community you agree to abide by its terms.
+
 ## License
 
 [MIT][license] © [Titus Wormer][author]
@@ -86,3 +94,7 @@ end.  `null` is returned if the given value is neither `node`,
 [position]: https://github.com/syntax-tree/unist#position
 
 [point]: https://github.com/syntax-tree/unist#point
+
+[contribute]: https://github.com/syntax-tree/unist/blob/master/contributing.md
+
+[coc]: https://github.com/syntax-tree/unist/blob/master/code-of-conduct.md
