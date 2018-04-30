@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tape');
-var stringify = require('./');
+var stringify = require('.');
 
 test('stringifyPosition', function (t) {
   t.equal(stringify(), null, 'should return `null` with `undefined`');
