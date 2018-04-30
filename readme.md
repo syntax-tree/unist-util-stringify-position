@@ -13,16 +13,16 @@ npm install unist-util-stringify-position
 ## Usage
 
 ```javascript
-var stringify = require('unist-util-stringify-position');
+var stringify = require('unist-util-stringify-position')
 
 // Point
-stringify({line: 2, column: 3}); //=> '2:3'
+stringify({line: 2, column: 3}) // => '2:3'
 
 // Position
 stringify({
   start: {line: 2},
   end: {line: 3}
-}); //=> '2:1-3:1'
+}) // => '2:1-3:1'
 
 // Node
 stringify({
@@ -32,7 +32,7 @@ stringify({
     start: {line: 5, column: 11},
     end: {line: 5, column: 12}
   }
-}); //=> '5:11-5:12'
+}) // => '5:11-5:12'
 ```
 
 ## API

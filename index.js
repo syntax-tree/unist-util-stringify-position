@@ -1,50 +1,50 @@
-'use strict';
+'use strict'
 
-var own = {}.hasOwnProperty;
+var own = {}.hasOwnProperty
 
-module.exports = stringify;
+module.exports = stringify
 
 function stringify(value) {
   /* Nothing. */
   if (!value || typeof value !== 'object') {
-    return null;
+    return null
   }
 
   /* Node. */
   if (own.call(value, 'position') || own.call(value, 'type')) {
-    return position(value.position);
+    return position(value.position)
   }
 
   /* Position. */
   if (own.call(value, 'start') || own.call(value, 'end')) {
-    return position(value);
+    return position(value)
   }
 
   /* Point. */
   if (own.call(value, 'line') || own.call(value, 'column')) {
-    return point(value);
+    return point(value)
   }
 
   /* ? */
-  return null;
+  return null
 }
 
 function point(point) {
   if (!point || typeof point !== 'object') {
-    point = {};
+    point = {}
   }
 
-  return index(point.line) + ':' + index(point.column);
+  return index(point.line) + ':' + index(point.column)
 }
 
 function position(pos) {
   if (!pos || typeof pos !== 'object') {
-    pos = {};
+    pos = {}
   }
 
-  return point(pos.start) + '-' + point(pos.end);
+  return point(pos.start) + '-' + point(pos.end)
 }
 
 function index(value) {
-  return value && typeof value === 'number' ? value : 1;
+  return value && typeof value === 'number' ? value : 1
 }
