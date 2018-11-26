@@ -20,26 +20,36 @@
   "contributors": [
     "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
   ],
-  "files": [
-    "index.js"
-  ],
-  "dependencies": {},
+  "main": "built/index.js",
+  "lib": "lib/index.ts",
+  "dependencies": {
+    "@types/unist": "^2.0.0"
+  },
   "devDependencies": {
+    "@types/browserify": "^12.0.36",
+    "@types/jest": "^23.3.9",
+    "@types/prettier": "^1.15.1",
+    "@types/tape": "^4.2.32",
     "browserify": "^16.0.0",
+    "jest": "^23.6.0",
     "nyc": "^13.0.0",
     "prettier": "^1.12.1",
     "remark-cli": "^6.0.0",
     "remark-preset-wooorm": "^4.0.0",
     "tape": "^4.5.1",
     "tinyify": "^2.4.3",
+    "ts-jest": "^23.10.5",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6",
     "xo": "^0.23.0"
   },
   "scripts": {
     "format": "remark . -qfo && prettier --write '**/*.js' && xo --fix",
     "build-bundle": "browserify . -s unistUtilStringifyPosition > unist-util-stringify-position.js",
     "build-mangle": "browserify . -s unistUtilStringifyPosition -p tinyify > unist-util-stringify-position.min.js",
-    "build": "npm run build-bundle && npm run build-mangle",
-    "test-api": "node test",
+    "build": "tsc",
+    "test-api": "ts-node lib/test.ts",
     "test-coverage": "nyc --reporter lcov tape test.js",
     "test": "npm run format && npm run build && npm run test-coverage"
   },

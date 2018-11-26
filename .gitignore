@@ -6,3 +6,4 @@ node_modules/
 unist-util-stringify-position.js
 unist-util-stringify-position.min.js
 yarn.lock
+built/
