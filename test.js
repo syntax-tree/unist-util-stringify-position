@@ -4,11 +4,11 @@ var test = require('tape')
 var stringify = require('.')
 
 test('stringifyPosition', function(t) {
-  t.equal(stringify(), null, 'should return `null` with `undefined`')
-  t.equal(stringify(null), null, 'should return `null` with `null`')
-  t.equal(stringify('foo'), null, 'should return `null` with `string`')
-  t.equal(stringify(5), null, 'should return `null` with `number`')
-  t.equal(stringify({}), null, 'should return `null` with `{}`')
+  t.equal(stringify(), '', 'should return empty `string` with `undefined`')
+  t.equal(stringify(null), '', 'should return empty `string` with `null`')
+  t.equal(stringify('foo'), '', 'should return empty `string` with `string`')
+  t.equal(stringify(5), '', 'should return empty `string` with `number`')
+  t.equal(stringify({}), '', 'should return empty `string` with `{}`')
 
   t.equal(
     stringify({type: 'text'}),
