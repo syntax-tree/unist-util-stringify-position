@@ -56,7 +56,7 @@ a node’s position.
 `string?` — A range `ls:cs-le:ce` (when given `node` or
 `position`) or a point `l:c` (when given `point`), where `l` stands
 for line, `c` for column, `s` for `start`, and `e` for
-end.  `null` is returned if the given value is neither `node`,
+end.  Empty string (`''`), is returned if the given value is neither `node`,
 `position`, nor `point`.
 
 ## Contribute

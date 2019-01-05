@@ -7,7 +7,7 @@ module.exports = stringify
 function stringify(value) {
   /* Nothing. */
   if (!value || typeof value !== 'object') {
-    return null
+    return ''
   }
 
   /* Node. */
@@ -26,7 +26,7 @@ function stringify(value) {
   }
 
   /* ? */
-  return null
+  return ''
 }
 
 function point(point) {
