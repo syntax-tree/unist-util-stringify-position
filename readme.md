@@ -1,6 +1,6 @@
 # unist-util-stringify-position [![Build Status][build-badge]][build-page] [![Coverage Status][coverage-badge]][coverage-page]
 
-Stringify [unist**][unist] [`Position`][position]s or [`Point`][point]s.
+Stringify [unist\*\*][unist] [`Position`][position]s or [`Point`][point]s.
 
 ## Installation
 
