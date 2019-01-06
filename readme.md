@@ -1,6 +1,6 @@
 # unist-util-stringify-position [![Build Status][build-badge]][build-page] [![Coverage Status][coverage-badge]][coverage-page]
 
-Stringify a [**Unist**][unist] [`Position`][position] or [`Point`][point].
+Stringify [unist**][unist] [`Position`][position]s or [`Point`][point]s.
 
 ## Installation
 
@@ -39,8 +39,7 @@ stringify({
 
 ### `stringifyPosition(node|position|point)`
 
-Stringify one point, a position (start and end points), or
-a node’s position.
+Stringify one point, a position (start and end points), or a node’s position.
 
 ###### Parameters
 
@@ -53,10 +52,10 @@ a node’s position.
 
 ###### Returns
 
-`string?` — A range `ls:cs-le:ce` (when given `node` or
-`position`) or a point `l:c` (when given `point`), where `l` stands
-for line, `c` for column, `s` for `start`, and `e` for
-end.  Empty string (`''`), is returned if the given value is neither `node`,
+`string?` — A range `ls:cs-le:ce` (when given `node` or `position`) or a point
+`l:c` (when given `point`), where `l` stands for line, `c` for column, `s` for
+`start`, and `e` for end.
+An empty string (`''`) is returned if the given value is neither `node`,
 `position`, nor `point`.
 
 ## Contribute
