@@ -64,6 +64,17 @@ Stringify one [point][], a [position][] (start and end [point][]s), or a node’
 An empty string (`''`) is returned if the given value is neither `node`,
 `position`, nor `point`.
 
+## Related
+
+*   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
+    — Check if a node is generated
+*   [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
+    — Get positional info of nodes
+*   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
+    — Remove positional info from trees
+*   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
+    — Get the source of a value (node or position) in a file
+
 ## Contribute
 
 See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
