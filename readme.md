@@ -8,29 +8,26 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-Stringify [unist][unist] [`Position`][position]s or [`Point`][point]s.
+[**unist**][unist] utility to pretty print the positional information of a node.
 
-## Installation
+## Install
 
 [npm][]:
 
-```bash
+```sh
 npm install unist-util-stringify-position
 ```
 
 ## Usage
 
-```javascript
+```js
 var stringify = require('unist-util-stringify-position')
 
 // Point
 stringify({line: 2, column: 3}) // => '2:3'
 
 // Position
-stringify({
-  start: {line: 2},
-  end: {line: 3}
-}) // => '2:1-3:1'
+stringify({start: {line: 2}, end: {line: 3}}) // => '2:1-3:1'
 
 // Node
 stringify({
@@ -47,7 +44,8 @@ stringify({
 
 ### `stringifyPosition(node|position|point)`
 
-Stringify one point, a position (start and end points), or a node’s position.
+Stringify one [point][], a [position][] (start and end [point][]s), or a node’s
+[positional information][positional-information].
 
 ###### Parameters
 
@@ -68,11 +66,13 @@ An empty string (`''`) is returned if the given value is neither `node`,
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/unist`][contributing] for ways to get
+See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
 started.
+See [`support.md`][support] for ways to get help.
 
-This organisation has a [Code of Conduct][coc].  By interacting with this
-repository, organisation, or community you agree to abide by its terms.
+This project has a [Code of Conduct][coc].
+By interacting with this repository, organisation, or community you agree to
+abide by its terms.
 
 ## License
 
@@ -112,6 +112,12 @@ repository, organisation, or community you agree to abide by its terms.
 
 [author]: https://wooorm.com
 
+[contributing]: https://github.com/syntax-tree/.github/blob/master/contributing.md
+
+[support]: https://github.com/syntax-tree/.github/blob/master/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/master/code-of-conduct.md
+
 [unist]: https://github.com/syntax-tree/unist
 
 [node]: https://github.com/syntax-tree/unist#node
@@ -120,6 +126,4 @@ repository, organisation, or community you agree to abide by its terms.
 
 [point]: https://github.com/syntax-tree/unist#point
 
-[contributing]: https://github.com/syntax-tree/unist/blob/master/contributing.md
-
-[coc]: https://github.com/syntax-tree/unist/blob/master/code-of-conduct.md
+[positional-information]: https://github.com/syntax-tree/unist#positional-information
