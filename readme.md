@@ -1,4 +1,12 @@
-# unist-util-stringify-position [![Build Status][build-badge]][build-page] [![Coverage Status][coverage-badge]][coverage-page]
+# unist-util-stringify-position
+
+[![Build][build-badge]][build]
+[![Coverage][coverage-badge]][coverage]
+[![Downloads][downloads-badge]][downloads]
+[![Size][size-badge]][size]
+[![Sponsors][sponsors-badge]][collective]
+[![Backers][backers-badge]][collective]
+[![Chat][chat-badge]][chat]
 
 Stringify [unist][unist] [`Position`][position]s or [`Point`][point]s.
 
@@ -74,11 +82,29 @@ repository, organisation, or community you agree to abide by its terms.
 
 [build-badge]: https://img.shields.io/travis/syntax-tree/unist-util-stringify-position.svg
 
-[build-page]: https://travis-ci.org/syntax-tree/unist-util-stringify-position
+[build]: https://travis-ci.org/syntax-tree/unist-util-stringify-position
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/unist-util-stringify-position.svg
 
-[coverage-page]: https://codecov.io/github/syntax-tree/unist-util-stringify-position?branch=master
+[coverage]: https://codecov.io/github/syntax-tree/unist-util-stringify-position
+
+[downloads-badge]: https://img.shields.io/npm/dm/unist-util-stringify-position.svg
+
+[downloads]: https://www.npmjs.com/package/unist-util-stringify-position
+
+[size-badge]: https://img.shields.io/bundlephobia/minzip/unist-util-stringify-position.svg
+
+[size]: https://bundlephobia.com/result?p=unist-util-stringify-position
+
+[sponsors-badge]: https://opencollective.com/unified/sponsors/badge.svg
+
+[backers-badge]: https://opencollective.com/unified/backers/badge.svg
+
+[collective]: https://opencollective.com/unified
+
+[chat-badge]: https://img.shields.io/badge/join%20the%20community-on%20spectrum-7b16ff.svg
+
+[chat]: https://spectrum.chat/unified/syntax-tree
 
 [npm]: https://docs.npmjs.com/cli/install
 
