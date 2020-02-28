@@ -1,18 +1,19 @@
 {
   "name": "unist-util-stringify-position",
   "version": "2.0.2",
-  "description": "Stringify a Unist node, position, or point",
+  "description": "unist utility to serialize a node, position, or point as a human readable location",
   "license": "MIT",
   "keywords": [
     "unist",
+    "unist-util",
+    "util",
+    "utility",
     "position",
     "location",
     "point",
     "node",
     "stringify",
-    "tostring",
-    "util",
-    "utility"
+    "tostring"
   ],
   "repository": "syntax-tree/unist-util-stringify-position",
   "bugs": "https://github.com/syntax-tree/unist-util-stringify-position/issues",
