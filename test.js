@@ -3,7 +3,7 @@
 var test = require('tape')
 var stringify = require('.')
 
-test('stringifyPosition', function(t) {
+test('stringifyPosition', function (t) {
   t.equal(stringify(), '', 'should return empty `string` with `undefined`')
   t.equal(stringify(null), '', 'should return empty `string` with `null`')
   t.equal(stringify('foo'), '', 'should return empty `string` with `string`')
