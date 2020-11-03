@@ -1,7 +1,5 @@
 import stringify = require('unist-util-stringify-position')
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 // Point
 const stringValue: string = stringify({line: 2, column: 3}) // => '2:3'
 
@@ -20,5 +18,3 @@ const stringValue3: string = stringify({
     end: {line: 5, column: 12}
   }
 }) // => '5:11-5:12'
-
-/* eslint-enable @typescript-eslint/no-unused-vars */
