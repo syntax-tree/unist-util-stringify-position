@@ -30,19 +30,11 @@ function stringify(value) {
 }
 
 function point(point) {
-  if (!point || typeof point !== 'object') {
-    point = {}
-  }
-
-  return index(point.line) + ':' + index(point.column)
+  return index(point && point.line) + ':' + index(point && point.column)
 }
 
 function position(pos) {
-  if (!pos || typeof pos !== 'object') {
-    pos = {}
-  }
-
-  return point(pos.start) + '-' + point(pos.end)
+  return point(pos && pos.start) + '-' + point(pos && pos.end)
 }
 
 function index(value) {
