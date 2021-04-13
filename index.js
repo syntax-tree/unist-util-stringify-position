@@ -1,10 +1,6 @@
-'use strict'
-
 var own = {}.hasOwnProperty
 
-module.exports = stringify
-
-function stringify(value) {
+export function stringifyPosition(value) {
   // Nothing.
   if (!value || typeof value !== 'object') {
     return ''

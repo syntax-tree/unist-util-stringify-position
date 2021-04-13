@@ -12,6 +12,9 @@
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -21,16 +24,16 @@ npm install unist-util-stringify-position
 ## Use
 
 ```js
-var stringify = require('unist-util-stringify-position')
+import {stringifyPosition} from 'unist-util-stringify-position'
 
 // Point
-stringify({line: 2, column: 3}) // => '2:3'
+stringifyPosition({line: 2, column: 3}) // => '2:3'
 
 // Position
-stringify({start: {line: 2}, end: {line: 3}}) // => '2:1-3:1'
+stringifyPosition({start: {line: 2}, end: {line: 3}}) // => '2:1-3:1'
 
 // Node
-stringify({
+stringifyPosition({
   type: 'text',
   value: '!',
   position: {
@@ -41,6 +44,9 @@ stringify({
 ```
 
 ## API
+
+This package exports the following identifiers: `stringifyPosition`.
+There is no default export.
 
 ### `stringifyPosition(node|position|point)`
 
