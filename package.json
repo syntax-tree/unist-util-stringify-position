@@ -1,6 +1,6 @@
 {
   "name": "unist-util-stringify-position",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "unist utility to serialize a node, position, or point as a human readable location",
   "license": "MIT",
   "keywords": [
