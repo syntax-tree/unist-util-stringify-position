@@ -21,19 +21,19 @@ export function stringifyPosition(value) {
 
   // Node.
   if (own.call(value, 'position') || own.call(value, 'type')) {
-    // @ts-ignore looks like a node.
+    // @ts-expect-error looks like a node.
     return position(value.position)
   }
 
   // Position.
   if (own.call(value, 'start') || own.call(value, 'end')) {
-    // @ts-ignore looks like a position.
+    // @ts-expect-error looks like a position.
     return position(value)
   }
 
   // Point.
   if (own.call(value, 'line') || own.call(value, 'column')) {
-    // @ts-ignore looks like a point.
+    // @ts-expect-error looks like a point.
     return point(value)
   }
 

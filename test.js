@@ -13,19 +13,19 @@ test('stringifyPosition', function (t) {
     'should return empty `string` with `null`'
   )
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition('foo'),
     '',
     'should return empty `string` with `string`'
   )
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition(5),
     '',
     'should return empty `string` with `number`'
   )
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition({}),
     '',
     'should return empty `string` with `{}`'
@@ -38,7 +38,7 @@ test('stringifyPosition', function (t) {
   )
 
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition({type: 'text', position: 3}),
     '1:1-1:1',
     'should return a range for `node` with invalid `position` #1'
@@ -47,7 +47,7 @@ test('stringifyPosition', function (t) {
   t.equal(
     stringifyPosition({
       type: 'text',
-      // @ts-ignore runtime.
+      // @ts-expect-error runtime.
       position: {start: {}, end: {}}
     }),
     '1:1-1:1',
@@ -85,14 +85,14 @@ test('stringifyPosition', function (t) {
   )
 
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition({start: 3, end: 6}),
     '1:1-1:1',
     'should return a range for `position` with invalid `point`s #1'
   )
 
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition({start: {}, end: {}}),
     '1:1-1:1',
     'should return range for `position` with invalid `point`s #1'
@@ -123,21 +123,21 @@ test('stringifyPosition', function (t) {
   )
 
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition({line: 'foo', column: 'bar'}),
     '1:1',
     'should return a point for a `point` with invalid indices #1'
   )
 
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition({line: 4}),
     '4:1',
     'should return a point for a partially valid `point` #1'
   )
 
   t.equal(
-    // @ts-ignore runtime.
+    // @ts-expect-error runtime.
     stringifyPosition({column: 12}),
     '1:12',
     'should return a point for a partially valid `point` #1'
