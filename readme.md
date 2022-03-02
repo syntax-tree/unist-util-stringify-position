@@ -8,17 +8,55 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**unist**][unist] utility to pretty print the positional information of a node.
+**[unist][]** utility to pretty print the positional information of a node.
+
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`stringifyPosition(node|position|point)`](#stringifypositionnodepositionpoint)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package is a utility that takes any [unist][] (whether mdast, hast, etc)
+node, position, or point, and serializes its positional info.
+
+## When should I use this?
+
+This utility is useful to display where something occurred in the original
+document, in one standard way, for humans.
+For example, when throwing errors or warning messages about something.
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
 
 ```sh
 npm install unist-util-stringify-position
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {stringifyPosition} from 'https://esm.sh/unist-util-stringify-position@3'
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {stringifyPosition} from 'https://esm.sh/unist-util-stringify-position@3?bundle'
+</script>
 ```
 
 ## Use
@@ -26,13 +64,8 @@ npm install unist-util-stringify-position
 ```js
 import {stringifyPosition} from 'unist-util-stringify-position'
 
-// Point
-stringifyPosition({line: 2, column: 3}) // => '2:3'
-
-// Position
-stringifyPosition({start: {line: 2}, end: {line: 3}}) // => '2:1-3:1'
-
-// Node
+stringifyPosition({line: 2, column: 3}) // => '2:3' (point)
+stringifyPosition({start: {line: 2}, end: {line: 3}}) // => '2:1-3:1' (position)
 stringifyPosition({
   type: 'text',
   value: '!',
@@ -40,27 +73,26 @@ stringifyPosition({
     start: {line: 5, column: 11},
     end: {line: 5, column: 12}
   }
-}) // => '5:11-5:12'
+}) // => '5:11-5:12' (node)
 ```
 
 ## API
 
-This package exports the following identifiers: `stringifyPosition`.
+This package exports the identifier `stringifyPosition`.
 There is no default export.
 
 ### `stringifyPosition(node|position|point)`
 
-Stringify one [point][], a [position][] (start and end [point][]s), or a node’s
-[positional information][positional-information].
+Stringify a [point][], [position][], or a [node][].
 
 ###### Parameters
 
 *   `node` ([`Node`][node])
-    — Node whose `'position'` property to stringify
+    — node whose `'position'` property to stringify
 *   `position` ([`Position`][position])
-    — Position whose `'start'` and `'end'` points to stringify
+    — position whose `'start'` and `'end'` points to stringify
 *   `point` ([`Point`][point])
-    — Point whose `'line'` and `'column'` to stringify
+    — point whose `'line'` and `'column'` to stringify
 
 ###### Returns
 
@@ -70,16 +102,32 @@ Stringify one [point][], a [position][] (start and end [point][]s), or a node’
 An empty string (`''`) is returned if the given value is neither `node`,
 `position`, nor `point`.
 
+## Types
+
+This package is fully typed with [TypeScript][].
+There are no additional types exported.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
+
+## Security
+
+This project is safe.
+
 ## Related
 
 *   [`unist-util-generated`](https://github.com/syntax-tree/unist-util-generated)
-    — Check if a node is generated
+    — check if a node is generated
 *   [`unist-util-position`](https://github.com/syntax-tree/unist-util-position)
-    — Get positional info of nodes
+    — get positional info of nodes
 *   [`unist-util-remove-position`](https://github.com/syntax-tree/unist-util-remove-position)
-    — Remove positional info from trees
+    — remove positional info from trees
 *   [`unist-util-source`](https://github.com/syntax-tree/unist-util-source)
-    — Get the source of a value (node or position) in a file
+    — get the source of a value (node or position) in a file
 
 ## Contribute
 
@@ -129,6 +177,12 @@ abide by its terms.
 
 [author]: https://wooorm.com
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
 
 [support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
@@ -142,5 +196,3 @@ abide by its terms.
 [position]: https://github.com/syntax-tree/unist#position
 
 [point]: https://github.com/syntax-tree/unist#point
-
-[positional-information]: https://github.com/syntax-tree/unist#positional-information
