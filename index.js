@@ -1,7 +1,7 @@
 var own = {}.hasOwnProperty
 
 /**
- * @typedef {import('unist').Node} Node
+ * @typedef {Record<string, unknown> & {type: string, position?: Position|undefined}} NodeLike
  * @typedef {import('unist').Position} Position
  * @typedef {import('unist').Point} Point
  */
@@ -10,7 +10,7 @@ var own = {}.hasOwnProperty
  * Stringify one point, a position (start and end points), or a node’s
  * positional information.
  *
- * @param {Node|Position|Point} [value]
+ * @param {NodeLike|Position|Point} [value]
  * @returns {string}
  */
 export function stringifyPosition(value) {
