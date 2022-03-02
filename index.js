@@ -1,9 +1,7 @@
-var own = {}.hasOwnProperty
-
 /**
- * @typedef {Record<string, unknown> & {type: string, position?: Position|undefined}} NodeLike
- * @typedef {import('unist').Position} Position
  * @typedef {import('unist').Point} Point
+ * @typedef {import('unist').Position} Position
+ * @typedef {Record<string, unknown> & {type: string, position?: Position|undefined}} NodeLike
  */
 
 /**
@@ -20,20 +18,17 @@ export function stringifyPosition(value) {
   }
 
   // Node.
-  if (own.call(value, 'position') || own.call(value, 'type')) {
-    // @ts-expect-error looks like a node.
+  if ('position' in value || 'type' in value) {
     return position(value.position)
   }
 
   // Position.
-  if (own.call(value, 'start') || own.call(value, 'end')) {
-    // @ts-expect-error looks like a position.
+  if ('start' in value || 'end' in value) {
     return position(value)
   }
 
   // Point.
-  if (own.call(value, 'line') || own.call(value, 'column')) {
-    // @ts-expect-error looks like a point.
+  if ('line' in value || 'column' in value) {
     return point(value)
   }
 
