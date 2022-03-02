@@ -58,7 +58,9 @@ test('stringifyPosition', function (t) {
     stringifyPosition({
       type: 'text',
       position: {
+        // @ts-expect-error runtime.
         start: {line: null, column: null},
+        // @ts-expect-error runtime.
         end: {line: null, column: null}
       }
     }),
@@ -79,6 +81,7 @@ test('stringifyPosition', function (t) {
   )
 
   t.equal(
+    // @ts-expect-error runtime.
     stringifyPosition({start: null, end: null}),
     '1:1-1:1',
     'should return a range for a `position` without `point`s'
@@ -99,6 +102,7 @@ test('stringifyPosition', function (t) {
   )
 
   t.equal(
+    // @ts-expect-error runtime.
     stringifyPosition({
       start: {line: null, column: null},
       end: {line: null, column: null}
@@ -117,6 +121,7 @@ test('stringifyPosition', function (t) {
   )
 
   t.equal(
+    // @ts-expect-error runtime.
     stringifyPosition({line: null, column: null}),
     '1:1',
     'should return a point for a `point` without indices'

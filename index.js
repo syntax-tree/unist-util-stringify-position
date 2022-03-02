@@ -8,7 +8,7 @@
  * Stringify one point, a position (start and end points), or a node’s
  * positional information.
  *
- * @param {NodeLike|Position|Point} [value]
+ * @param {NodeLike|Position|Point|null} [value]
  * @returns {string}
  */
 export function stringifyPosition(value) {
@@ -37,7 +37,7 @@ export function stringifyPosition(value) {
 }
 
 /**
- * @param {Point} point
+ * @param {Point|undefined} point
  * @returns {string}
  */
 function point(point) {
@@ -45,7 +45,7 @@ function point(point) {
 }
 
 /**
- * @param {Position} pos
+ * @param {Position|undefined} pos
  * @returns {string}
  */
 function position(pos) {
@@ -53,7 +53,7 @@ function position(pos) {
 }
 
 /**
- * @param {number} value
+ * @param {number|undefined} value
  * @returns {number}
  */
 function index(value) {
