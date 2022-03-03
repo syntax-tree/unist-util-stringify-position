@@ -1,14 +1,15 @@
 /**
  * @typedef {import('unist').Point} Point
+ * @typedef {import('unist').Node} Node
  * @typedef {import('unist').Position} Position
- * @typedef {Record<string, unknown> & {type: string, position?: Position|undefined}} NodeLike
+ * @typedef {object & {type: string, position?: Position|undefined}} NodeLike
  */
 
 /**
  * Stringify one point, a position (start and end points), or a node’s
  * positional information.
  *
- * @param {NodeLike|Position|Point|null} [value]
+ * @param {Node|NodeLike|Position|Point|null} [value]
  * @returns {string}
  */
 export function stringifyPosition(value) {

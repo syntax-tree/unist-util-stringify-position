@@ -77,7 +77,22 @@ test('stringifyPosition', function (t) {
       }
     }),
     '2:5-2:6',
-    'should return a range for `node` with valid `position`'
+    'should return a range for `node` with valid `position` (types: literal object)'
+  )
+
+  t.equal(
+    stringifyPosition(
+      /** @type {import('mdast').Root} */ ({
+        type: 'root',
+        children: [],
+        position: {
+          start: {line: 1, column: 1},
+          end: {line: 2, column: 1}
+        }
+      })
+    ),
+    '1:1-2:1',
+    'should return a range for `node` with valid `position` (types: explicit instance of node)'
   )
 
   t.equal(
@@ -102,9 +117,10 @@ test('stringifyPosition', function (t) {
   )
 
   t.equal(
-    // @ts-expect-error runtime.
     stringifyPosition({
+      // @ts-expect-error runtime.
       start: {line: null, column: null},
+      // @ts-expect-error runtime.
       end: {line: null, column: null}
     }),
     '1:1-1:1',
