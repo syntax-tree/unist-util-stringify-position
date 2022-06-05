@@ -8,7 +8,7 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-**[unist][]** utility to pretty print the positional information of a node.
+[unist][] utility to pretty print the positional info of a node.
 
 ## Contents
 
@@ -39,7 +39,7 @@ For example, when throwing errors or warning messages about something.
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, or 16.0+), install with [npm][]:
+In Node.js (version 12.20+, 14.14+, 16.0+, or 18.0+), install with [npm][]:
 
 ```sh
 npm install unist-util-stringify-position
@@ -83,7 +83,7 @@ There is no default export.
 
 ### `stringifyPosition(node|position|point)`
 
-Stringify a [point][], [position][], or a [node][].
+Stringify a point, position, or node.
 
 ###### Parameters
 
@@ -96,22 +96,23 @@ Stringify a [point][], [position][], or a [node][].
 
 ###### Returns
 
-`string?` — A range `ls:cs-le:ce` (when given `node` or `position`) or a point
-`l:c` (when given `point`), where `l` stands for line, `c` for column, `s` for
-`start`, and `e` for end.
+Pretty printed positional info of a node (`string`).
+In the format of a range `ls:cs-le:ce` (when given `node` or `position`) or a
+point `l:c` (when given `point`), where `l` stands for line, `c` for column, `s`
+for `start`, and `e` for end.
 An empty string (`''`) is returned if the given value is neither `node`,
 `position`, nor `point`.
 
 ## Types
 
 This package is fully typed with [TypeScript][].
-There are no additional types exported.
+It exports no additional types.
 
 ## Compatibility
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, and 16.0+.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
