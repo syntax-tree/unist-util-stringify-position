@@ -2,14 +2,28 @@
  * @typedef {import('unist').Point} Point
  * @typedef {import('unist').Node} Node
  * @typedef {import('unist').Position} Position
- * @typedef {object & {type: string, position?: Position|undefined}} NodeLike
+ */
+
+/**
+ * @typedef NodeLike
+ * @property {string} type
+ * @property {PositionLike | null | undefined} [position]
+ *
+ * @typedef PositionLike
+ * @property {PointLike | null | undefined} [start]
+ * @property {PointLike | null | undefined} [end]
+ *
+ * @typedef PointLike
+ * @property {number | null | undefined} [line]
+ * @property {number | null | undefined} [column]
+ * @property {number | null | undefined} [offset]
  */
 
 /**
  * Stringify one point, a position (start and end points), or a node’s
  * positional information.
  *
- * @param {Node|NodeLike|Position|Point|null} [value]
+ * @param {Node | NodeLike | Position | PositionLike | Point | PointLike | null | undefined} [value]
  * @returns {string}
  */
 export function stringifyPosition(value) {
@@ -38,7 +52,7 @@ export function stringifyPosition(value) {
 }
 
 /**
- * @param {Point|undefined} point
+ * @param {Point | PointLike | null | undefined} point
  * @returns {string}
  */
 function point(point) {
@@ -46,7 +60,7 @@ function point(point) {
 }
 
 /**
- * @param {Position|undefined} pos
+ * @param {Position | PositionLike | null | undefined} pos
  * @returns {string}
  */
 function position(pos) {
@@ -54,7 +68,7 @@ function position(pos) {
 }
 
 /**
- * @param {number|undefined} value
+ * @param {number | null | undefined} value
  * @returns {number}
  */
 function index(value) {
