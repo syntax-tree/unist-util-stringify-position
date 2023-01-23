@@ -1,8 +1,15 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {stringifyPosition} from './index.js'
+import * as mod from './index.js'
 
 test('stringifyPosition', function () {
+  assert.deepEqual(
+    Object.keys(mod).sort(),
+    ['stringifyPosition'],
+    'should expose the public api'
+  )
+
   assert.equal(
     stringifyPosition(),
     '',
