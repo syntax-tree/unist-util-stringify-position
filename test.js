@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import {stringifyPosition} from './index.js'
+import {stringifyPosition} from 'unist-util-stringify-position'
 
 test('stringifyPosition', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
-      'stringifyPosition'
-    ])
+    assert.deepEqual(
+      Object.keys(await import('unist-util-stringify-position')).sort(),
+      ['stringifyPosition']
+    )
   })
 
   await t.test(
