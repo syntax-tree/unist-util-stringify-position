@@ -48,14 +48,14 @@ npm install unist-util-stringify-position
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {stringifyPosition} from 'https://esm.sh/unist-util-stringify-position@3'
+import {stringifyPosition} from 'https://esm.sh/unist-util-stringify-position@4'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {stringifyPosition} from 'https://esm.sh/unist-util-stringify-position@3?bundle'
+  import {stringifyPosition} from 'https://esm.sh/unist-util-stringify-position@4?bundle'
 </script>
 ```
 
